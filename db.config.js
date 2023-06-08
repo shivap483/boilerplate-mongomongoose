@@ -1,5 +1,6 @@
 
-import appConfig from './app.config';
+const appConfig = require('./app.config');
+
 
 const mongoose = require('mongoose');
 const _connect = async () => {
@@ -10,4 +11,4 @@ const _connect = async () => {
     mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 }
 
-export default { _connect }
+module.exports = { _connect }

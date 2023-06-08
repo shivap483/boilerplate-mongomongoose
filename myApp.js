@@ -1,7 +1,7 @@
-const { default: dbConfig } = require("./db.config");
 const mongoose = require('mongoose');
+const dbConfig = require("./db.config");
 
-await dbConfig._connect();
+dbConfig._connect();
 
 const personSchema = new mongoose.Schema({
   name: String,
