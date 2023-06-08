@@ -12,9 +12,9 @@ const Person = mongoose.model('Person', personSchema);
 
 const createAndSavePerson = (done) => {
   const shiva = new Person({ name: "Shiva", age: 24, favoriteFoods: ["dosa", "biryani"] });
-  shiva.save((data, err) => {
-    if (err) return console.log(err);
-    done(null, data);
+  shiva.save((err, data) => {
+    if (err) return console.error(err);
+    return done(null, data);
   });
 };
 
